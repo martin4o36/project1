@@ -1,6 +1,7 @@
 package app.controller;
 
 import app.dto.AirportDto;
+import app.model.Airport;
 import app.model.AirportFilter;
 import app.services.Services;
 import lombok.AllArgsConstructor;
@@ -21,13 +22,15 @@ public class AppController {
         return ResponseEntity.ok(airportDtos);
     }
 
-    @GetMapping("/filter")
-    public ResponseEntity<?> filterAirports(@RequestParam boolean countryAsRoot, @RequestBody AirportFilter airportFilter) {
-        if(countryAsRoot) {
-            else {
-                
-            }
-        }
-    }
-
+//    @GetMapping("/filter")
+//    public ResponseEntity<?> filterAirports(@RequestParam boolean countryAsRoot, @RequestBody AirportFilter airportFilter) {
+//        List<?> result;
+//        if(countryAsRoot) {
+//            result = Services.filterAirportsWithCountryAsRoot(airportFilter);
+//        } else {
+//            result = Services.filterAirportsWithFilter(airportFilter);
+//        }
+//
+//        return ResponseEntity.ok(result);
+//    }
 }
