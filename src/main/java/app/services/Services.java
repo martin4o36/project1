@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import app.model.AirportFilter;
+
 @AllArgsConstructor
 @Service
 public class Services {
@@ -18,5 +20,13 @@ public class Services {
     public List<AirportDto> getAllAirports() {
         List<Airport> airports = airportRepository.findAll();
         return airports.stream().map(AirportMapper::mapToAirportDto).collect(Collectors.toList());
+    }
+
+    public List<?> filterAirportsWithCountryAsRoot(AirportFilter airportFilter) {
+
+    }
+
+    public List<?> filterAirportsWithFilter(AirportFilter airportFilter) {
+
     }
 }
