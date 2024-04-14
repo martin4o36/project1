@@ -19,11 +19,8 @@ public class App {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         String url, username, password;
 
-//        jdbc:postgresql://localhost:5432/db_school_practice1
         url = System.getenv("DB_URL");
-//        postgres
         username = System.getenv("DB_USERNAME");
-//        2006!@ab
         password = System.getenv("DB_PASSWORD");
 
         if (url == null || username == null || password == null) {
