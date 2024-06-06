@@ -22,11 +22,11 @@ public class Services {
         return airports.stream().map(AirportMapper::mapToAirportDto).collect(Collectors.toList());
     }
 
-    public List<?> filterAirportsWithCountryAsRoot(AirportFilter airportFilter) {
-
+    public List<Object> filterAirportsWithCountryAsRoot(AirportFilter airportFilter) {
+        return airportRepository.formatResponseWithCountryAsRoot(airportFilter);
     }
 
-    public List<?> filterAirportsWithFilter(AirportFilter airportFilter) {
-
+    public List<Object> filterAirportsWithFilter(AirportFilter airportFilter) {
+        return airportRepository.formatResponseWithAirportAsRoot(airportFilter);
     }
 }
