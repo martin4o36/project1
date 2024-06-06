@@ -1,7 +1,7 @@
-FROM maven:3.8.5-openjdk-17
+FROM openjdk:17-jdk-alpine
 
-WORKDIR /app
-COPY . .
-RUN mvn clean install
+COPY target/practice1.jar practice1.jar
 
-CMD mvn spring-boot:run
+EXPOSE 9090
+
+ENTRYPOINT ["java","-jar","practice1.jar"]
