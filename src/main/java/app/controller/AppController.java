@@ -22,15 +22,15 @@ public class AppController {
         return ResponseEntity.ok(airportDtos);
     }
 
-//    @GetMapping("/filter")
-//    public ResponseEntity<?> filterAirports(@RequestParam boolean countryAsRoot, @RequestBody AirportFilter airportFilter) {
-//        List<?> result;
-//        if(countryAsRoot) {
-//            result = Services.filterAirportsWithCountryAsRoot(airportFilter);
-//        } else {
-//            result = Services.filterAirportsWithFilter(airportFilter);
-//        }
-//
-//        return ResponseEntity.ok(result);
-//    }
+    @PostMapping("/filter")
+    public ResponseEntity<List<Object>> filterAirports(@RequestBody boolean countryAsRoot, @RequestBody AirportFilter airportFilter) {
+        List<Object> result;
+        if(countryAsRoot) {
+            result = services.filterAirportsWithCountryAsRoot(airportFilter);
+        } else {
+            result = services.filterAirportsWithFilter(airportFilter);
+        }
+
+        return ResponseEntity.ok(result);
+    }
 }
