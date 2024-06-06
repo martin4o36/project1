@@ -1,7 +1,6 @@
 package app.controller;
 
 import app.dto.AirportDto;
-import app.model.Airport;
 import app.model.AirportFilter;
 import app.services.Services;
 import lombok.AllArgsConstructor;
